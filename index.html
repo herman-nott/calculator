@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Calculator</title>
+    <meta name="description" content="Race 00. Calculator">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/sidebar.css">
+    <link rel="stylesheet" href="css/dots.css">
+</head>
+<body>
+    <h1>Calculator</h1>
+
+    <div class="calculator-container">
+        <div class="sidebar">
+            <p class="header">Menu</p>
+
+            <ul>
+                <li><span class="link-text">Basic Calculator</span></li>
+                <li><span class="link-text">Engineer Calculator</span></li>
+                <li><span class="link-text">Converter</span></li>
+            </ul>
+        </div>
+
+        <div class="display">
+            <div class="display-header">
+                <div class="dots" title="Menu">
+                    <div class="dot blue-dot"></div>
+                    <div class="dot purple-dot"></div>
+                    <div class="dot green-dot"></div> 
+                </div>
+
+                <div class="converter-category hidden">
+                    <label for="unit-category">Type:</label>
+                    <select id="unit-category">
+                        <option value="length">Lenght</option>
+                        <option value="mass">Weight</option>
+                        <option value="area">Area</option>
+                    </select>
+                </div>
+            </div>
+            <p class="history-field"> </p>
+            <p class="output-field">0</p>
+
+            <div class="converter hidden">
+                <div class="converter-input">
+                    <input type="number" id="from-value" placeholder="Enter value" min="0" value="0">
+                    <select id="from-unit">
+                        <option value="m">cm</option>
+                        <option value="m">m</option>
+                        <option value="km">km</option>
+                        <option value="in">in</option>
+                        <option value="ft">ft</option>
+                        <option value="mi">mi</option>
+                    </select>
+                </div>
+
+                <div class="converter-line"></div>
+
+                <div class="converter-output">
+                    <input type="text" id="to-value" placeholder="Result" readonly>
+                    <select id="to-unit">
+                        <option value="m">cm</option>
+                        <option value="m">m</option>
+                        <option value="km">km</option>
+                        <option value="in">in</option>
+                        <option value="ft">ft</option>
+                        <option value="mi">mi</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <div class="buttons">
+            <div class="row-1">
+                <button class="calc-btn engineering-button hidden top-row left-row">MC</button>
+                <button class="calc-btn engineering-button hidden top-row">x!</button>
+                <button class="calc-btn top-row left-row">C</button>
+                <button class="calc-btn top-row">+/-</button>
+                <button class="calc-btn top-row">%</button>
+                <button class="calc-btn top-row right-row">&div;</button>
+            </div>
+    
+            <div class="row-2">
+                <button class="calc-btn engineering-button hidden left-row">MR</button>
+                <button class="calc-btn engineering-button hidden">|x|</button>
+                <button class="calc-btn left-row">7</button>
+                <button class="calc-btn">8</button>
+                <button class="calc-btn">9</button>
+                <button class="calc-btn right-row">*</button>
+            </div>
+    
+            <div class="row-3">
+                <button class="calc-btn engineering-button hidden left-row">M+</button>
+                <button class="calc-btn engineering-button hidden">x<sup>n</sup></button>
+                <button class="calc-btn left-row">4</button>
+                <button class="calc-btn">5</button>
+                <button class="calc-btn">6</button>
+                <button class="calc-btn right-row">+</button>
+            </div>
+    
+            <div class="row-4">
+                <button class="calc-btn engineering-button hidden left-row">M-</button>
+                <button class="calc-btn engineering-button hidden">&radic;x</button>
+                <button class="calc-btn left-row">1</button>
+                <button class="calc-btn">2</button>
+                <button class="calc-btn">3</button>
+                <button class="calc-btn right-row">-</button>
+            </div>
+    
+            <div class="row-5">
+                <button class="calc-btn engineering-button hidden bottom-row left-row">MS</button>
+                <button class="calc-btn engineering-button hidden bottom-row">1/x</button>
+                <button class="calc-btn bottom-row left-row">0</button>
+                <button class="calc-btn bottom-row">.</button>
+                <button class="calc-btn equal bottom-row right-row">=</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/frontend.js"></script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+.dots {
+    display: flex;
+    flex-direction: row;
+    position: absolute;
+    top: 20px;
+    left: 5px;
+    gap: 5px;
+    cursor: pointer;
+    transition: 0.7s ease;
+    align-items: flex-start;
+}
+
+.dot {
+    width: 9px;
+    height: 9px;
+    background-color: red;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+}
+
+.blue-dot {
+    background-color: #588cde;
+}
+
+.purple-dot {
+    background-color: #645adc;
+}
+
+.green-dot {
+    background-color: #79da8b;
+}
+
+.dots.active  .dot {
+    border-radius: 2px;
+    width: 30px;
+    height: 5px;
+}
+  
+.dots.active  .blue-dot { 
+    transform: translate(8px, -8px);
+}
+  
+.dots.active  .purple-dot { 
+    transform: translate(-27px, 0px);
+}
+
+.dots.active  .green-dot {
+    transform: translate(-62px, 8px);
+}
