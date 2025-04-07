@@ -49,3 +49,53 @@ document.querySelectorAll('.link-text').forEach(el => {
         }
     });
 });
+
+const units = {
+    length: [
+        { value: 'cm', label: 'cm' },
+        { value: 'm', label: 'm' },
+        { value: 'km', label: 'km' },
+        { value: 'in', label: 'in' },
+        { value: 'ft', label: 'ft' },
+        { value: 'mi', label: 'mi' },
+    ],
+    mass: [
+        { value: 'mg', label: 'mg' },
+        { value: 'g', label: 'g' },
+        { value: 'kg', label: 'kg' },
+        { value: 'lb', label: 'lb' },
+    ],
+    area: [
+        { value: 'cm2', label: 'cm²' },
+        { value: 'm2', label: 'm²' },
+        { value: 'km2', label: 'km²' },
+        { value: 'in2', label: 'in²' },
+        { value: 'ft2', label: 'ft²' },
+    ]
+};
+
+const unitCategoryElement = document.getElementById('unit-category');
+const fromUnitElement = document.getElementById('from-unit');
+const toUnitElement = document.getElementById('to-unit');
+
+function updateUnitOptions(category) {
+    fromUnitElement.innerHTML = '';
+    toUnitElement.innerHTML = '';
+
+    units[category].forEach(unit => {
+        const fromOption = document.createElement('option');
+        fromOption.value = unit.value;
+        fromOption.textContent = unit.label;
+
+        const toOption = fromOption.cloneNode(true);
+
+        fromUnitElement.appendChild(fromOption);
+        toUnitElement.appendChild(toOption);
+    });
+}
+
+unitCategoryElement.addEventListener('change', function () {
+    updateUnitOptions(this.value);
+});
+
+updateUnitOptions(unitCategoryElement.value);

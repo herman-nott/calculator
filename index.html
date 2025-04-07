@@ -38,8 +38,8 @@
                 <div class="converter-category hidden">
                     <label for="unit-category">Type:</label>
                     <select id="unit-category">
-                        <option value="length">Lenght</option>
-                        <option value="mass">Weight</option>
+                        <option value="length">Length</option>
+                        <option value="mass">Mass</option>
                         <option value="area">Area</option>
                     </select>
                 </div>
@@ -50,79 +50,68 @@
             <div class="converter hidden">
                 <div class="converter-input">
                     <input type="number" id="from-value" placeholder="Enter value" min="0" value="0">
-                    <select id="from-unit">
-                        <option value="m">cm</option>
-                        <option value="m">m</option>
-                        <option value="km">km</option>
-                        <option value="in">in</option>
-                        <option value="ft">ft</option>
-                        <option value="mi">mi</option>
-                    </select>
+                    <select id="from-unit"></select>
                 </div>
 
                 <div class="converter-line"></div>
 
                 <div class="converter-output">
                     <input type="text" id="to-value" placeholder="Result" readonly>
-                    <select id="to-unit">
-                        <option value="m">cm</option>
-                        <option value="m">m</option>
-                        <option value="km">km</option>
-                        <option value="in">in</option>
-                        <option value="ft">ft</option>
-                        <option value="mi">mi</option>
-                    </select>
+                    <select id="to-unit"></select>
                 </div>
             </div>
         </div>
 
         <div class="buttons">
             <div class="row-1">
-                <button class="calc-btn engineering-button hidden top-row left-row">MC</button>
-                <button class="calc-btn engineering-button hidden top-row">x!</button>
-                <button class="calc-btn top-row left-row">C</button>
-                <button class="calc-btn top-row">+/-</button>
-                <button class="calc-btn top-row">%</button>
-                <button class="calc-btn top-row right-row">&div;</button>
+                <button class="calc-btn engineering-button hidden top-row left-row" data-func="memory-clear">MC</button>
+                <button class="calc-btn engineering-button hidden top-row" data-func="math-factorial">x!</button>
+                <button class="calc-btn top-row left-row" data-func="math-clear">C</button>
+                <button class="calc-btn top-row" data-func="change-symb">+/-</button>
+                <button class="calc-btn top-row" data-func="math-perc">%</button>
+                <button class="calc-btn top-row right-row" data-func="math-div">&div;</button>
             </div>
     
             <div class="row-2">
-                <button class="calc-btn engineering-button hidden left-row">MR</button>
-                <button class="calc-btn engineering-button hidden">|x|</button>
-                <button class="calc-btn left-row">7</button>
-                <button class="calc-btn">8</button>
-                <button class="calc-btn">9</button>
-                <button class="calc-btn right-row">*</button>
+                <button class="calc-btn engineering-button hidden left-row" data-func="memory-result">MR</button>
+                <button class="calc-btn engineering-button hidden" data-func="math-module">|x|</button>
+                <button class="calc-btn left-row" data-func="num-7">7</button>
+                <button class="calc-btn" data-func="num-8">8</button>
+                <button class="calc-btn" data-func="num-9">9</button>
+                <button class="calc-btn right-row" data-func="math-mult">×</button>
             </div>
     
             <div class="row-3">
-                <button class="calc-btn engineering-button hidden left-row">M+</button>
-                <button class="calc-btn engineering-button hidden">x<sup>n</sup></button>
-                <button class="calc-btn left-row">4</button>
-                <button class="calc-btn">5</button>
-                <button class="calc-btn">6</button>
-                <button class="calc-btn right-row">+</button>
+                <button class="calc-btn engineering-button hidden left-row" data-func="memory-add">M+</button>
+                <button class="calc-btn engineering-button hidden" data-func="math-pow">x<sup>n</sup></button>
+                <button class="calc-btn left-row" data-func="num-4">4</button>
+                <button class="calc-btn" data-func="num-5">5</button>
+                <button class="calc-btn" data-func="num-6">6</button>
+                <button class="calc-btn right-row" data-func="math-add">+</button>
             </div>
     
             <div class="row-4">
-                <button class="calc-btn engineering-button hidden left-row">M-</button>
-                <button class="calc-btn engineering-button hidden">&radic;x</button>
-                <button class="calc-btn left-row">1</button>
-                <button class="calc-btn">2</button>
-                <button class="calc-btn">3</button>
-                <button class="calc-btn right-row">-</button>
+                <button class="calc-btn engineering-button hidden left-row" data-func="memory-sub">M-</button>
+                <button class="calc-btn engineering-button hidden" data-func="math-sqrt">&radic;x</button>
+                <button class="calc-btn left-row" data-func="num-1">1</button>
+                <button class="calc-btn" data-func="num-2">2</button>
+                <button class="calc-btn" data-func="num-3">3</button>
+                <button class="calc-btn right-row" data-func="math-sub">-</button>
             </div>
     
             <div class="row-5">
-                <button class="calc-btn engineering-button hidden bottom-row left-row">MS</button>
-                <button class="calc-btn engineering-button hidden bottom-row">1/x</button>
-                <button class="calc-btn bottom-row left-row">0</button>
-                <button class="calc-btn bottom-row">.</button>
-                <button class="calc-btn equal bottom-row right-row">=</button>
+                <button class="calc-btn engineering-button hidden bottom-row left-row" data-func="math-markup">MU</button>
+                <button class="calc-btn engineering-button hidden bottom-row" data-func="math-rev">1/x</button>
+                <button class="calc-btn bottom-row left-row" data-func="num-0">0</button>
+                <button class="calc-btn bottom-row" data-func="symb-point">.</button>
+                <button class="calc-btn equal bottom-row right-row" data-func="math-result">=</button>
             </div>
         </div>
     </div>
 
     <script src="js/frontend.js"></script>
+    <script src="js/basic-functions.js"></script>
+    <script src="js/engineering-functions.js"></script>
+    <script src="js/converter-functions.js"></script>
 </body>
 </html>
